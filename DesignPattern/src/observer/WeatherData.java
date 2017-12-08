@@ -42,7 +42,7 @@ public class WeatherData {
 	
 	public float getPressure() {
 		this.press = press;
-		return press
+		return press;
 	}
 
 }
