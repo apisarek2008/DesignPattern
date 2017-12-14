@@ -1,33 +1,48 @@
 package observer;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
-public class WeatherData {
+public class WeatherData implements Subject{
 	private float temp;
 	private float humid;
 	private float press;
-	Arrays Observers;
+	private ArrayList observers;
 	
 
-	public static void main(String[] args) {
-		System.out.println("utu");
+	public WeatherData() {
+		observers = new ArrayList();
+	}
+	
+	public void registerObserver(Observer o) {
+		observers.add(o);
+	}
+	
+	public void notifyObservers(Observer o) {
+		for(int i = 0; i < observers.size(); i++) {
+			Observer observer = (Observer)observers.get(i);
+			observer.update(temp, humid, press);
+		}
+	}
+	
+	public void removeObserver(Observer o) {
+		// If observers wants to be un-registered we just take it off from the list
+		int i = observers.indexOf(o);
+		if (i>=0) {
+			observers.remove(i);
+		}
+	}
 
+	public void measurementChanged() {
+		notifyObservers(null);
 	}
 	
-	public void registerObserver() {
-		
-	}
-	
-	public void notifyObserver() {
-		
-	}
-	
-	public void removeObserver() {
-		
-	}
-
-	public void measurementChange() {
-		
+	public void setMeasurements(float temp, float humid, float press) {
+		// 
+		this.temp = temp;
+		this.humid = humid;
+		this.press = press;
+		measurementChanged();
 	}
 
 	public float getTemperature() {
@@ -44,5 +59,9 @@ public class WeatherData {
 		this.press = press;
 		return press;
 	}
+
+	
+
+	
 
 }
