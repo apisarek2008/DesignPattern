@@ -1,0 +1,5 @@
+insert into "APP"."EMPLOYEE_TBL" ("EMP_ID", "EMP_NAME", "EMP_SURNAME") values('1', 'Olo', 'Pisarek');
+insert into "APP"."EMPLOYEE_TBL" ("EMP_ID", "EMP_NAME", "EMP_SURNAME") values('2', 'Zenon', 'Ferdek');
+insert into "APP"."EMPLOYEE_TBL" ("EMP_ID", "EMP_NAME", "EMP_SURNAME") values('3', 'Adam', 'Laskowik');
+insert into APP.EMPLOYEE_TBL(emp_id, EMP_NAME, EMP_SURNAME) values ('4', 'Zdenek', 'Smetana');
+select * from EMPLOYEE_TBL where EMP_ID='1';
