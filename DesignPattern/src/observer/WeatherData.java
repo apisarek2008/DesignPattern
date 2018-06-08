@@ -7,7 +7,7 @@ public class WeatherData implements Subject{
 	private float temp;
 	private float humid;
 	private float press;
-	private ArrayList observers;
+	private ArrayList <observers>;
 	
 
 	public WeatherData() {
@@ -51,10 +51,10 @@ public class WeatherData implements Subject{
 	}
 	
 	public float getHumidity() {
+		
 		this.humid = humid;
 		return humid;
 	}
-	
 	public float getPressure() {
 		this.press = press;
 		return press;
