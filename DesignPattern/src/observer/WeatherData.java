@@ -60,8 +60,11 @@ public class WeatherData implements Subject{
 		return press;
 	}
 
-	
 
-	
+	@Override
+	public void notifyObservers() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
