@@ -64,6 +64,7 @@ public class WeatherData implements Subject{
 	@Override
 	public void notifyObservers() {
 		// TODO Auto-generated method stub
+		System.out.println("rweiruoqweuroqweurowqrfldfjladfjlsvxcvx,vn,xvcn,xv");
 		
 	}
 
