@@ -1,7 +1,7 @@
 package observer;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+
 
 public class WeatherData implements Subject{
 	private float temp;
@@ -18,13 +18,7 @@ public class WeatherData implements Subject{
 		observers.add(o);
 	}
 	
-	public void notifyObservers(Observer o) {
-		for(int i = 0; i < observers.size(); i++) {
-			Observer observer = (Observer)observers.get(i);
-			observer.update(temp, humid, press);
-		}
-	}
-	
+		
 	public void removeObserver(Observer o) {
 		// If observers wants to be un-registered we just take it off from the list
 		int i = observers.indexOf(o);
@@ -34,7 +28,7 @@ public class WeatherData implements Subject{
 	}
 
 	public void measurementChanged() {
-		notifyObservers(null);
+		notifyObservers();
 	}
 	
 	public void setMeasurements(float temp, float humid, float press) {
@@ -60,13 +54,12 @@ public class WeatherData implements Subject{
 		return press;
 	}
 
-
-	@Override
 	public void notifyObservers() {
-		// TODO Auto-generated method stub
-		System.out.println("rweiruoqweuroqweurowqrfldfjladfjlsvxcvx,vn,xvcn,xv");
-		System.out.println("eworiwoeruowuewo");
+		for(int i = 0; i < observers.size(); i++) {
+			Observer observer = (Observer)observers.get(i);
+			observer.update(temp, humid, press);
 		
 	}
 
+	}
 }
