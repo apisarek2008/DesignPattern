@@ -21,5 +21,6 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
 	public void update(float temperature, float humidity, float pressure) {
 		this.temp = temperature;
 		this.hum = humidity;
+		display();
 	}
 }
