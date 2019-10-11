@@ -10,7 +10,7 @@ public class WeatherStation {
 		weatherData.setMeasurements (80, 40,998);
 		weatherData.setMeasurements(23, 66, 1000);
 		weatherData.setMeasurements(40, 40, 950);
-		
+		System.out.println("Test.....");
 	}
 
 }
